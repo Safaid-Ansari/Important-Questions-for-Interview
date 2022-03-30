@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class runner {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String input = s.nextLine();
+		System.out.println(solution.isStringPalindrome(input));
+	}
+}
+
+
+
+public class solution {
+
+	public static boolean isStringPalindrome(String input) {
+		int l = input.length();
+        return helper(input, 0, l-1);
+	}
+    
+    private static boolean helper(String input, int sI, int eI){
+        if(sI>=eI)
+            return true;
+        
+        if(input.charAt(sI) != input.charAt(eI))
+            return false;
+        
+        return helper(input, sI+1, eI-1);
+    }
+}
+
